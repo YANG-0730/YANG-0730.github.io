@@ -4,37 +4,24 @@
   
   
   <entry>
+    <title>1. 抽象一个web服务器的类HttpWebServer()</title>
+    <link href="/2020/04/29/1.%20%E6%8A%BD%E8%B1%A1%E4%B8%80%E4%B8%AAweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E7%B1%BBHttpWebServer()/"/>
+    <url>/2020/04/29/1.%20%E6%8A%BD%E8%B1%A1%E4%B8%80%E4%B8%AAweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E7%B1%BBHttpWebServer()/</url>
+    
+    <content type="html"><![CDATA[<pre><code class="hljs python"><span class="hljs-comment"># 返回指定页面完整多任务面向对象版本</span><span class="hljs-comment"># 1. 实现tcp服务器</span><span class="hljs-comment"># 1.2 等待客户端链接，一旦链接创建一个子线程处理客户端的请求:</span>    <span class="hljs-comment"># 2. 接收浏览器发送过来的HTTP请求报文, 获取请求资源路径</span>    <span class="hljs-comment"># 3. 读取指定页面(static/请求资源路径), 拼接成HTTP响应报文返回给浏览器</span>    <span class="hljs-comment"># 4. 关闭服务浏览器的socket</span><span class="hljs-comment"># 1.抽象一个web服务器的类 HttpWebServer()</span><span class="hljs-comment"># 2.类的初始化方法，需要对属性socket初始化</span><span class="hljs-comment"># 3.类的启动方法， 实现服务器的启动，并提供服务</span><span class="hljs-comment"># 1、实现tcp服务器</span><span class="hljs-keyword">import</span> socket<span class="hljs-keyword">import</span> threading<span class="hljs-comment"># 1. 抽象一个web服务器的类HttpWebServer()</span><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HttpWebServer</span><span class="hljs-params">(object)</span>:</span>    <span class="hljs-comment"># 2.类的初始化方法，需要对属性socket初始化</span>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>        <span class="hljs-comment"># 1. 创建服务器socket</span>        self.tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)        <span class="hljs-comment"># 2. 设置端口复用</span>        self.tcp_server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, <span class="hljs-literal">True</span>)        <span class="hljs-comment"># 3. 绑定端口</span>        self.tcp_server_socket.bind((<span class="hljs-string">''</span>, <span class="hljs-number">8080</span>))        <span class="hljs-comment"># 4. 设置监听模式</span>        self.tcp_server_socket.listen(<span class="hljs-number">128</span>)    <span class="hljs-comment"># 3.类的启动方法， 实现服务器的启动，并提供服务</span>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">start</span><span class="hljs-params">(self)</span>:</span>        <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:            <span class="hljs-comment"># 5.1 等待客户端链接</span>            new_socket, client_ip_port = self.tcp_server_socket.accept()            <span class="hljs-comment"># 创建子线程对象</span>            sub_thread = threading.Thread(target=self.handle_request, args=(new_socket, client_ip_port))            <span class="hljs-comment"># 设置子线程守护主线程,防止主线程无法结束</span>            sub_thread.daemon = <span class="hljs-literal">True</span>            <span class="hljs-comment"># sub_thread.setDaemon(True)</span>            <span class="hljs-comment"># 启动子线程</span>            sub_thread.start()<span class="hljs-meta">    @staticmethod</span>    <span class="hljs-comment"># 处理浏览器请求函数</span>    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">handle_request</span><span class="hljs-params">(new_socket, client_ip_port)</span>:</span>        <span class="hljs-comment"># 5.2 接收浏览器发送过来的HTTP请求</span>        recv_data = new_socket.recv(<span class="hljs-number">4096</span>)        <span class="hljs-comment"># print('请求报文二进制格式:')</span>        <span class="hljs-comment"># print(recv_data)</span>        <span class="hljs-comment">#</span>        <span class="hljs-comment"># print('请求报文字符串格式:')</span>        <span class="hljs-comment"># print(recv_data.decode('utf-8'))</span>        <span class="hljs-comment"># 注意:浏览器不会长期维护链接,会主断掉链接,服务器的recv解阻塞,返回长度为0的数据</span>        <span class="hljs-keyword">if</span> len(recv_data) == <span class="hljs-number">0</span>:            print(client_ip_port, <span class="hljs-string">'浏览器关闭链接了...'</span>)            new_socket.close()            <span class="hljs-keyword">return</span>        recv_str = recv_data.decode(<span class="hljs-string">'utf-8'</span>)        recv_list = recv_str.split(<span class="hljs-string">' '</span>, maxsplit=<span class="hljs-number">2</span>)        request_path = recv_list[<span class="hljs-number">1</span>]        print(<span class="hljs-string">'请求资源路径:'</span>, request_path)        <span class="hljs-comment"># 设置默认首页</span>        <span class="hljs-keyword">if</span> request_path == <span class="hljs-string">'/'</span>:            request_path = <span class="hljs-string">'/index.html'</span>        <span class="hljs-keyword">try</span>:            <span class="hljs-comment"># 3. 读取指定页面(static/请求资源路径), 拼接成HTTP响应报文返回给浏览器</span>            <span class="hljs-keyword">with</span> open(<span class="hljs-string">'static'</span> + request_path, <span class="hljs-string">'rb'</span>) <span class="hljs-keyword">as</span> file:                file_data = file.read()        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:            <span class="hljs-string">'''请求资源路径不存在'''</span>            <span class="hljs-comment"># 返回一个404页面</span>            response_line = <span class="hljs-string">'HTTP/1.1 404 Not Found\r\n'</span>            response_head = <span class="hljs-string">'Server: YANG/1.0\r\n'</span>            <span class="hljs-keyword">with</span> open(<span class="hljs-string">'static/error.html'</span>, <span class="hljs-string">'rb'</span>) <span class="hljs-keyword">as</span> file:                file_data = file.read()            response_body = file_data            response_data = (response_line + response_head + <span class="hljs-string">'\r\n'</span>).encode(<span class="hljs-string">'utf-8'</span>) + response_body            new_socket.send(response_data)        <span class="hljs-keyword">else</span>:            <span class="hljs-string">'''请求资源路径存在'''</span>            <span class="hljs-comment"># 3.1 拼接成HTTP响应报文</span>            <span class="hljs-comment"># 响应行</span>            response_line = <span class="hljs-string">'HTTP/1.1 200 OK\r\n'</span>            <span class="hljs-comment"># 响应头</span>            response_head = <span class="hljs-string">'Server: YANG/1.0\r\n'</span>            <span class="hljs-comment"># 空行</span>            <span class="hljs-comment"># \r\n</span>            <span class="hljs-comment"># 响应体</span>            response_body = file_data            <span class="hljs-comment"># 拼接成HTTP响应报文</span>            response_data = (response_line + response_head + <span class="hljs-string">'\r\n'</span>).encode(<span class="hljs-string">'utf-8'</span>) + response_body            <span class="hljs-comment"># 返回给浏览器</span>            new_socket.send(response_data)        <span class="hljs-keyword">finally</span>:            <span class="hljs-comment"># 4.关闭服务浏览器的socket</span>            new_socket.close()<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>    <span class="hljs-comment"># 使用我们web服务器类实例化对象</span>    wb = HttpWebServer()    <span class="hljs-comment"># 启动服务器</span>    wb.start()<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:    main()</code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>xzzzzzzj</title>
     <link href="/2020/04/28/xzzzzzzj/"/>
     <url>/2020/04/28/xzzzzzzj/</url>
     
-    <content type="html"><![CDATA[<p>YANG-0730.github.io<br>YANG-0730.github.io<br>YANG-0730.github.io<br>YANG-0730.github.io<br>YANG-0730.github.ioYANG-0730.github.io<br>YANG-0730.github.io<br>YANG-0730.github.io<br>YANG-0730.github.io<br>YANG-0730.github.iodsada</p><p>hello</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>python</title>
-    <link href="/2020/02/22/python/"/>
-    <url>/2020/02/22/python/</url>
-    
-    <content type="html"><![CDATA[<p> version: v1.8.0<br>INFO  Congratulations! Your are using the latest version of theme Fluid. Current version: v1.8.0<br>INFO  Congratulations! Your are using the latest version of theme Fluid. Current version: v1.8.0<br>^CINFO  Bye!<br>love@Littles-MacBook-Pro Mblog %<br>love@Littles-MacBook-Pro Mblog % hexo s<br>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> . Press Ctrl+C to stop.<br>INFO  Congratulations! Your are using the latest version of theme Fluid. Current version: v1.8.0<br>INFO  Congratulations! Your are using the latest version of theme Fluid. Current version: v1.8.0<br>INFO  Congratulations! Your are using the latest version of theme Fluid. Current version: v1.8.0<br>INFO  Congratulations! Your are using the latest version of theme Fluid. Current version: v1.8.0<br>INFO  Congratulations! Your are using the latest version of theme Fluid. Current version: v1.8.0<br>INFO  Congratulations! Your are using the latest version of theme Fluid. Current version: v1.8.0<br>dasd<br>a </p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>未命名</title>
-    <link href="/2020/02/22/%E6%9C%AA%E5%91%BD%E5%90%8D/"/>
-    <url>/2020/02/22/%E6%9C%AA%E5%91%BD%E5%90%8D/</url>
-    
-    <content type="html"><![CDATA[<p>sdasdasda</p>]]></content>
+    <content type="html"><![CDATA[<p>hello world</p><p>xzzzzzzj</p><p>520</p>]]></content>
     
     
     
