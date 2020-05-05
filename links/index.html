@@ -13,11 +13,11 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#2f4154">
+  <meta name="theme-color" content="#EE7785">
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Links - Hexo</title>
+  <title>Links - ismile</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -46,11 +46,11 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Hexo</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>ismile</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -68,7 +68,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/">
               <i class="iconfont icon-home-fill"></i>
-              Home</a>
+              主页</a>
           </li>
         
           
@@ -77,7 +77,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/archives/">
               <i class="iconfont icon-archive-fill"></i>
-              Archives</a>
+              归档</a>
           </li>
         
           
@@ -86,7 +86,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/categories/">
               <i class="iconfont icon-category-fill"></i>
-              Categories</a>
+              分类</a>
           </li>
         
           
@@ -95,7 +95,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/tags/">
               <i class="iconfont icon-tags-fill"></i>
-              Tags</a>
+              标签</a>
           </li>
         
           
@@ -104,7 +104,16 @@
           <li class="nav-item">
             <a class="nav-link" href="/about/">
               <i class="iconfont icon-user-fill"></i>
-              About</a>
+              关于</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">
+              <i class="iconfont icon-link-fill"></i>
+              友链</a>
           </li>
         
         
@@ -119,10 +128,10 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/me9.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="container text-center white-text fadeInUp">
             <span class="h2" id="subtitle">
               
@@ -131,6 +140,10 @@
             
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -141,7 +154,7 @@
     
       <div class="container nopadding-md">
         <div class="py-5" id="board"
-          >
+          style=margin-top:0>
           
           <div class="container">
             <div class="row">
@@ -162,40 +175,6 @@
           <div class="link-text">
             <div class="link-title">Fluid Docs</div>
             <div class="link-intro">主题使用指南</div>
-          </div>
-        </div>
-      </a>
-    </div>
-  
-    
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/img/loading.gif" alt="Fluid Repo" />
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Repo</div>
-            <div class="link-intro">主题 GitHub 仓库</div>
-          </div>
-        </div>
-      </a>
-    </div>
-  
-    
-    <div class="card col-lg-4 col-md-6 col-sm-12">
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/Changelog.md" class="card-body hover-with-bg" target="_blank" rel="noopener">
-        <div class="card-content">
-          
-            <div class="link-avatar my-auto">
-              <img src="/img/favicon.png" srcset="/img/loading.gif" alt="Fluid Changelog" />
-            </div>
-          
-          <div class="link-text">
-            <div class="link-title">Fluid Changelog</div>
-            <div class="link-intro">主题更新日志</div>
           </div>
         </div>
       </a>
@@ -259,7 +238,7 @@
       order: 'random',
       theme: '#b7daff',
       preload: 'none',
-      audio: [{"name":"name","artist":"artist","url":"/songs/test.mp3","cover":"/img/cover.jpg"},{"name":"name","artist":"artist","url":"https://...url.mp3","cover":"https://...cover.jpg"}]
+      audio: [{"name":"别怕 我在","artist":"隔壁老樊","url":"/songs/别怕 我在 - 隔壁老樊.mp3","cover":"/songs/img/me9.jpg"}]
     });
   }
 </script>
@@ -313,10 +292,10 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Links&nbsp;",
+        "友情链接&nbsp;",
       ],
       cursorChar: "_",
-      typeSpeed: 70,
+      typeSpeed: 100,
       loop: false,
     });
     typed.stop();

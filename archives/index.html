@@ -13,11 +13,11 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#2f4154">
+  <meta name="theme-color" content="#EE7785">
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Archives - Hexo</title>
+  <title>Archives - ismile</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
@@ -46,11 +46,11 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Hexo</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>ismile</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -68,7 +68,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/">
               <i class="iconfont icon-home-fill"></i>
-              Home</a>
+              主页</a>
           </li>
         
           
@@ -77,7 +77,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/archives/">
               <i class="iconfont icon-archive-fill"></i>
-              Archives</a>
+              归档</a>
           </li>
         
           
@@ -86,7 +86,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/categories/">
               <i class="iconfont icon-category-fill"></i>
-              Categories</a>
+              分类</a>
           </li>
         
           
@@ -95,7 +95,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/tags/">
               <i class="iconfont icon-tags-fill"></i>
-              Tags</a>
+              标签</a>
           </li>
         
           
@@ -104,7 +104,16 @@
           <li class="nav-item">
             <a class="nav-link" href="/about/">
               <i class="iconfont icon-user-fill"></i>
-              About</a>
+              关于</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">
+              <i class="iconfont icon-link-fill"></i>
+              友链</a>
           </li>
         
         
@@ -119,10 +128,10 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/img/me2.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0)">
           <div class="container text-center white-text fadeInUp">
             <span class="h2" id="subtitle">
               
@@ -131,6 +140,10 @@
             
           </div>
 
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
           
         </div>
       </div>
@@ -141,7 +154,7 @@
     
       <div class="container nopadding-md">
         <div class="py-5" id="board"
-          >
+          style=margin-top:0>
           
           <div class="container">
             <div class="row">
@@ -156,8 +169,8 @@
       
       <p class="h5">2020</p>
     
-    <a href="/2020/04/29/1.%20%E6%8A%BD%E8%B1%A1%E4%B8%80%E4%B8%AAweb%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E7%B1%BBHttpWebServer()/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">1. 抽象一个web服务器的类HttpWebServer()</span>
+    <a href="/2020/04/29/%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E5%AE%8C%E6%95%B4%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%88%E6%9C%AC/" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">返回指定页面完整多任务面向对象版本</span>
       <span style="float: right;">04-29</span>
     </a>
   
@@ -227,7 +240,7 @@
       order: 'random',
       theme: '#b7daff',
       preload: 'none',
-      audio: [{"name":"name","artist":"artist","url":"/songs/test.mp3","cover":"/img/cover.jpg"},{"name":"name","artist":"artist","url":"https://...url.mp3","cover":"https://...cover.jpg"}]
+      audio: [{"name":"别怕 我在","artist":"隔壁老樊","url":"/songs/别怕 我在 - 隔壁老樊.mp3","cover":"/songs/img/me9.jpg"}]
     });
   }
 </script>
@@ -281,10 +294,10 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Archive&nbsp;",
+        "归档&nbsp;",
       ],
       cursorChar: "_",
-      typeSpeed: 70,
+      typeSpeed: 100,
       loop: false,
     });
     typed.stop();
