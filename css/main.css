@@ -35,7 +35,7 @@ img[srcset] {
   padding: 0.45rem;
 }
 .hover-with-bg:hover {
-  background-color: #ebedef;
+  background-color: #EE7785;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   border-radius: 0.15rem;
@@ -206,7 +206,7 @@ post-content strong {
 #scroll-top-button i {
   font-size: 1.75rem;
   margin: auto;
-  color: #718096;
+  color: EE7785;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -538,10 +538,10 @@ a.beian-police img {
   color: white;
 }
 .top-nav-collapse {
-  background-color: #2f4154;
+  background-color: #EE7785;
 }
 .navbar-col-show {
-  background-color: #2f4154;
+  background-color: #EE7785;
 }
 @media (max-width: 767px) {
   .navbar {
@@ -644,7 +644,7 @@ a.beian-police img {
 }
 .pagination a:hover,
 .pagination .current {
-  background-color: #ebedef;
+  background-color: #EE7785;
 }
 .modal-dialog .modal-content {
   border: 0;
@@ -815,13 +815,13 @@ input[type=checkbox]:checked:after {
   text-overflow: ellipsis;
 }
 .index-btm {
-  color: #718096;
+  color: EE7785;
 }
 .index-btm a {
-  color: #718096;
+  color: EE7785;
 }
 .index-excerpt {
-  color: #718096;
+  color: EE7785;
   margin: 0.5rem 0 0.5rem 0;
   height: calc(1.4rem * 3);
   line-height: 1.4rem;
@@ -1370,7 +1370,7 @@ h6::before {
   max-height: 2rem;
   font-size: 0.85rem;
   line-height: 1.2;
-  color: #718096;
+  color: EE7785;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
