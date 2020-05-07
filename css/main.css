@@ -1,6 +1,6 @@
 html,
 body {
-  font-size: 16px;
+  font-size: 14px;
   font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
 }
 html,
@@ -12,17 +12,17 @@ header,
 }
 body {
   background-color: #eee;
-  color: #3c4858;
+  color: #566270;
 }
 body a {
-  color: #3c4858;
+  color: #EE7785;
   text-decoration: none;
   cursor: pointer;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
 body a:hover {
-  color: #1abc9c;
+  color: #2EC4B6;
   text-decoration: none;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
@@ -35,7 +35,7 @@ img[srcset] {
   padding: 0.45rem;
 }
 .hover-with-bg:hover {
-  background-color: #EE7785;
+  background-color: f4f7f7;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   border-radius: 0.15rem;
@@ -206,7 +206,7 @@ post-content strong {
 #scroll-top-button i {
   font-size: 1.75rem;
   margin: auto;
-  color: EE7785;
+  color: #566270;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -489,12 +489,12 @@ a.beian-police img {
 .navbar {
   background-color: transparent;
   font-size: 0.875rem;
-  color: white;
+  color: #EE7785;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 .navbar a {
-  color: white;
+  color: #EE7785;
 }
 .navbar a:hover {
   background-color: rgba(0,0,0,0.1);
@@ -532,16 +532,16 @@ a.beian-police img {
   padding-bottom: 5px;
 }
 .navbar-custom {
-  color: white;
+  color: #EE7785;
 }
 .navbar-custom a {
-  color: white;
+  color: #EE7785;
 }
 .top-nav-collapse {
-  background-color: #EE7785;
+  background-color: transparent;
 }
 .navbar-col-show {
-  background-color: #EE7785;
+  background-color: transparent;
 }
 @media (max-width: 767px) {
   .navbar {
@@ -644,7 +644,7 @@ a.beian-police img {
 }
 .pagination a:hover,
 .pagination .current {
-  background-color: #EE7785;
+  background-color: f4f7f7;
 }
 .modal-dialog .modal-content {
   border: 0;
@@ -815,13 +815,13 @@ input[type=checkbox]:checked:after {
   text-overflow: ellipsis;
 }
 .index-btm {
-  color: EE7785;
+  color: #566270;
 }
 .index-btm a {
-  color: EE7785;
+  color: #566270;
 }
 .index-excerpt {
-  color: EE7785;
+  color: #566270;
   margin: 0.5rem 0 0.5rem 0;
   height: calc(1.4rem * 3);
   line-height: 1.4rem;
@@ -1003,11 +1003,11 @@ h6::before {
   font-size: 0.95rem;
 }
 .tocbot-link {
-  color: #3c4858;
+  color: #566270;
 }
 .tocbot-active-link {
   font-weight: bold;
-  color: #1abc9c;
+  color: #2EC4B6;
 }
 .tocbot-is-collapsed {
   max-height: 0;
@@ -1313,7 +1313,7 @@ h6::before {
   padding: 0.5rem;
 }
 .tagcloud a:hover {
-  color: #1abc9c !important;
+  color: #2EC4B6 !important;
 }
 .links .card {
   box-shadow: none;
@@ -1370,7 +1370,7 @@ h6::before {
   max-height: 2rem;
   font-size: 0.85rem;
   line-height: 1.2;
-  color: EE7785;
+  color: #566270;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

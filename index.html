@@ -1,4 +1,23 @@
-<!DOCTYPE html>
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sun Apr 04 2021');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
 <html lang="en">
 
 
@@ -13,7 +32,7 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#EE7785">
+  <meta name="theme-color" content="transparent">
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
@@ -23,7 +42,7 @@
 <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.18.1/styles/github-gist.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.18.1/styles/github-gist.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -40,7 +59,6 @@
 <link  rel="stylesheet" href="/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
-
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
@@ -166,15 +184,15 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/04/29/%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E5%AE%8C%E6%95%B4%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%88%E6%9C%AC/" target="_self">
+        <a href="/2020/05/01/%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E5%AE%8C%E6%95%B4%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%88%E6%9C%AC/" target="_self">
           <img src="/img/me.gif" srcset="/img/loading.gif" alt="返回指定页面完整多任务面向对象版本">
         </a>
       </div>
     
     <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/29/%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E5%AE%8C%E6%95%B4%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%88%E6%9C%AC/">返回指定页面完整多任务面向对象版本</a>
+      <a class="index-header" href="/2020/05/01/%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E5%AE%8C%E6%95%B4%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%88%E6%9C%AC/">返回指定页面完整多任务面向对象版本</a>
 
-      <a href="/2020/04/29/%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E5%AE%8C%E6%95%B4%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%88%E6%9C%AC/" class="index-excerpt">
+      <a href="/2020/05/01/%E8%BF%94%E5%9B%9E%E6%8C%87%E5%AE%9A%E9%A1%B5%E9%9D%A2%E5%AE%8C%E6%95%B4%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%89%88%E6%9C%AC/" class="index-excerpt">
         
         
           
@@ -194,7 +212,7 @@
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-29
+            <i class="iconfont icon-date"></i>&nbsp;2020-05-01
           </div>
         
         
@@ -207,15 +225,15 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/04/28/xzzzzzzj/" target="_self">
+        <a href="/2020/05/01/xzzzzzzj/" target="_self">
           <img src="/img/me.gif" srcset="/img/loading.gif" alt="xzzzzzzj">
         </a>
       </div>
     
     <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/04/28/xzzzzzzj/">xzzzzzzj</a>
+      <a class="index-header" href="/2020/05/01/xzzzzzzj/">xzzzzzzj</a>
 
-      <a href="/2020/04/28/xzzzzzzj/" class="index-excerpt">
+      <a href="/2020/05/01/xzzzzzzj/" class="index-excerpt">
         
         
           
@@ -229,7 +247,7 @@ xzzzzzzj
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-04-28
+            <i class="iconfont icon-date"></i>&nbsp;2020-05-01
           </div>
         
         
@@ -293,12 +311,12 @@ xzzzzzzj
     new APlayer({
       container: document.getElementById('aplayer'),
       fixed: true,
-      autoplay: 'true' === 'true',
+      autoplay: 'false' === 'true',
       loop: 'all',
-      order: 'random',
-      theme: '#b7daff',
+      order: 'list',
+      theme: '#EE7785',
       preload: 'none',
-      audio: [{"name":"别怕 我在","artist":"隔壁老樊","url":"/songs/别怕 我在 - 隔壁老樊.mp3","cover":"/songs/img/me9.jpg"}]
+      audio: [{"name":"别怕 我在","artist":"隔壁老樊","url":"/songs/别怕 我在 - 隔壁老樊.mp3","cover":"/songs/img/me1.png"},{"name":"One By One","artist":"Enya","url":"/songs/One By One - Enya.mp3","cover":"/songs/img/me1.png"},{"name":"夜空中最亮的星","artist":"小果酱","url":"/songs/夜空中最亮的星 (小果酱 remix) - 小果酱.mp3","cover":"/songs/img/me1.png"},{"name":"我的快乐(锦绣二重唱)","artist":"淋海","url":"/songs/我的快乐 - 淋海.mp3","cover":"/songs/img/me1.png"}]
     });
   }
 </script>
@@ -308,25 +326,16 @@ xzzzzzzj
   
 
   <footer class="mt-5">
-  <div class="text-center">
+  <div class="text-center" py-3>
     <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"
-        ><span>Hexo</span></a
-      >
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
       <i class="iconfont icon-love"></i>
-      <a href="https://ismile.vip" target="_blank" rel="nofollow noopener"
-        ><span>ismile</span></a
-      >
+      <a href="https://ismile.vip" target="_blank" rel="nofollow noopener"><span>ismile</span></a>
 
       <i class="iconfont icon-love"></i>
 
-      <a
-        href="https://github.com/fluid-dev/hexo-theme-fluid"
-        target="_blank"
-        rel="nofollow noopener"
-      >
-        <span>Fluid</span></a
-      >
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
     </div>
     
  
@@ -342,6 +351,7 @@ xzzzzzzj
     <span id="times">载入时分秒...</span>
     <script>
       var now = new Date();
+
       function createtime() {
         var grt = new Date("05/01/2020 00:00:00"); //此处修改你的建站时间或者网站上线时间
         now.setTime(now.getTime() + 250);
@@ -371,24 +381,37 @@ xzzzzzzj
       setInterval("createtime()", 250);
     </script>
   </div>
+  <div class="text-center">
+    <p><a id="hitokoto" href=''>:D 获取中...</a></p>
+    <script>
+      fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+          const hitokoto = document.getElementById('hitokoto')
+          hitokoto.innerText = data.hitokoto
+        })
+        .catch(console.error)
+    </script>
+  </div>
 </footer>
-
 <!-- SCRIPTS -->
 <script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
 <script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
 <script  src="/js/main.js" ></script>
 
 
-  <script  src="/js/lazyload.js" ></script>
+<script  src="/js/lazyload.js" ></script>
 
 
 
 
 
-  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
-  <script  src="/js/clipboard-use.js" ></script>
+<script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+<script  src="/js/clipboard-use.js" ></script>
 
 
+
+<script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
@@ -502,8 +525,6 @@ xzzzzzzj
       }(window, document);
     </script>
   
-
-
 
 
 
